@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Menu, X, Home, User, Settings, Mail, LogIn} from 'lucide-react'
 import "../CSS/commonCSS/Header.css"
+import Form from "../auth/Form";
+import Accueil from "./Accueil";
 
 const Navbar = () => {
     const [isMenuOpen,setIsMenuOpen] = useState(false)
@@ -10,8 +12,8 @@ const Navbar = () => {
     };
 
     const menuItems = [
-        { name : "Login", href : "#Form", icon : LogIn},
-        { name : "Accueil", href : "#home", icon : Home},
+        { name : "Login", href : Form, icon : LogIn},
+        { name : "Accueil", href : Accueil, icon : Home},
         { name : "Settings", href : "#settings", icon : Settings},
         { name : " A propos", href : "#about", icon : User},
         { name : "Contact", href : "#contact", icon : Mail}
@@ -34,9 +36,9 @@ const Navbar = () => {
               className="MenuBurger"
             >
               {isMenuOpen ? (
-                <X className="block h-6 w-6" />
+                <X />
               ) : (
-                <Menu className="block h-6 w-6" />
+                <Menu />
               )}
             </button>
           </div>
@@ -56,7 +58,7 @@ const Navbar = () => {
                   className="elementsToggleOpen"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <IconComponent className="w-5 h-5 mr-3" />
+                  <IconComponent />
                   {item.name}
                 </a>
               );
