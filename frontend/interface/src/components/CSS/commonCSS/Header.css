@@ -1,0 +1,39 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.NavBar{
+    display: flex;
+    height: 10vh;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+}
+
+.element2{
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh;
+    align-items: center;
+    border-radius: 2vh;
+}
+
+
+.elementsToggleOpen{
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    text-decoration: none;
+    color: black;
+    margin: 1vh;
+    text-align: center;
+}
+
+.elementsToggleOpen:hover{
+    background-color: grey;
+    width: 7%;
+    border-radius: 2vh;
+}
+
+.MenuBurger{
+    border-radius: 10%;
+}
