@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import {Menu, X, Home, User, Settings, Mail, LogIn} from 'lucide-react'
 import "../CSS/commonCSS/Header.css"
-import Form from "../auth/Form";
-import Accueil from "./Accueil";
 
 const Navbar = () => {
     const [isMenuOpen,setIsMenuOpen] = useState(false)
@@ -12,10 +10,10 @@ const Navbar = () => {
     };
 
     const menuItems = [
-        { name : "Login", href : Form, icon : LogIn},
-        { name : "Accueil", href : Accueil, icon : Home},
+        { name : "Login", href : "/form", icon : LogIn},
+        { name : "Accueil", href :"/", icon : Home},
         { name : "Settings", href : "#settings", icon : Settings},
-        { name : " A propos", href : "#about", icon : User},
+        { name : " Mes Associations", href : "#mesAsso", icon : User},
         { name : "Contact", href : "#contact", icon : Mail}
     ];
 

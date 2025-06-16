@@ -5,6 +5,8 @@ import NavBar from "./components/common/Header"
 import Accueil from "./components/common/Accueil"
 import Form from "./components/auth/Form";
 
+//Faut rajouter et créer la page settings, mes associations et contacts
+
   function App() {
     return (
       <BrowserRouter>

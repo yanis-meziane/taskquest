@@ -37,9 +37,8 @@
 }
 
 .elementsToggleOpen{
-   
-    left: auto;
     display: flex;
+     nav-right: 100%;
     flex-direction: row;
     height: 5vh;
     width: 10%; 
