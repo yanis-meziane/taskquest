@@ -16,24 +16,17 @@
     align-items: center;
     border-radius: 2vh;
 }
-.elementToggle{
+.elementsToggle{
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
-.elementToggle > div {
-    flex-direction: row;
-    height: 100vh;
-    width: 100%;
-    text-decoration: none;
-    color: black;
-    margin: 1vh 0; 
-    text-align: left;
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-    align-items: center; 
-    padding: 0 1rem;
-    border-radius: 2vh; 
+.elementsToggle > div {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    min-width: 100%; 
 }
 
 .elementsToggleOpen{
