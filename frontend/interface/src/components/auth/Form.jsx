@@ -13,12 +13,32 @@ export default function Form() {
         <h1>Login</h1>
         <form onSubmit={form} className="formulaire">
 
-            <article>
+            <article className="formElements">
                 <label htmlFor="firstname"> Quel est ton prénom ? </label>
-                <input name="Firstname" placeholder="Firstname..." minLength={1} /> 
+                <input type="text" name="firstname" id="lastname" placeholder="Firstname..." minLength={1} /> 
             </article>
 
-            <article>
+            <article className="formElements">
+                <label htmlFor="lastname">Quel est ton nom de famille ?</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Lastname..." minLength={1} />
+            </article>
+
+            <article className="formElements">
+                <label htmlFor="mail">Quel est ton mail ?</label>
+                <input type="email" name="mail" id="mail" placeholder="Mail..." />
+            </article>
+
+            <article className="formElements">
+                <label htmlFor="password">Quel est ton mot de passe ?</label>
+                <input type="password" name="password" id="password" minLength={1} />
+            </article>
+
+            <article className="formElements">
+                <label htmlFor="confPassword">Confirme ton mot de passe</label>
+                <input type="password" name="password" id="password" minLength={1} />
+            </article>
+
+            <article className="formElements">
                 <button type="submit">Search</button>
             </article>
         </form>
