@@ -1,0 +1,27 @@
+.accueilMain{
+    height: 50vh;
+}
+
+
+.accueilElements{
+    display: flex;
+    width : 100%;
+    padding: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+ 
+ #taskQuestImage{
+    width: 200px;
+    height: 200px;
+    border-radius: 50vh;
+}
+
+#secondElement{
+    display: flex;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 2vh;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+}
