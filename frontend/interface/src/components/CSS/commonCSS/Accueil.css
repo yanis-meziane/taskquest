@@ -5,6 +5,7 @@
 
 .accueilElements{
     display: flex;
+    flex-direction: column;
     width : 100%;
     padding: 5vh;
     justify-content: center;
@@ -24,4 +25,27 @@
     border-radius: 2vh;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     padding: 0.5rem;
+}
+
+#thirdElement{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.argues{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 2vh;
+    border-radius: 2rem;
+    justify-content: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.argues:hover{
+    overflow-y: auto;
+    transform: translateY(-5px);
+    background-color: whitesmoke;
 }
