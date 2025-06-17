@@ -1,0 +1,11 @@
+#FormMain{
+    align-items: center;
+    text-align: center;
+}
+
+.formulaire{
+    height: 50vh;
+    width: 100%;
+    align-items: center;
+    margin: 2vh;
+}
