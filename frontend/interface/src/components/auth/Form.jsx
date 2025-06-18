@@ -9,8 +9,9 @@ export default function Form() {
     alert('Formulaire envoyé')
   }
   return (
-
+    
     <section id="FormMain">
+        <div id="formSection">
         <h1>Sign in </h1>
         <form onSubmit={form} className="formulaire">
 
@@ -45,6 +46,7 @@ export default function Form() {
         </form>
 
         Si tu n'as pas encore de compte, clique <Link to={"/login"}>ici</Link>
+    </div>
     </section>
 
   );
