@@ -1,27 +1,66 @@
+#signin{
+    padding: 3rem;
+}
+
 #FormMain{
+    display: flex; 
     align-items: center;
+    justify-content: center; 
     text-align: center;
     width: 50%;
-    justify-content: center;
+    margin: 5vh auto; 
+    padding: 1vh;
     border-radius: 2rem;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-
+    min-height: 85vh;
 }
 
 .formulaire{
     height: 50vh;
     width: 100%;
+    display: flex; 
+    flex-direction: column; 
     align-items: center;
-
+    justify-content: center; 
 }
 
 .formElements{
     margin: 2vh;
+    width: 100%; /* Largeur complète pour les éléments */
+    max-width: 300px; /* Largeur maximale pour éviter qu'ils soient trop larges */
 }
 
 #formSection{
     display: flex;
     flex-direction: column;
-    width : 100%;
+    width: 100%;
+    align-items: center; /* Centrage des éléments enfants */
 }
 
+/* Ajout de styles pour les inputs et labels */
+.formElements label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formElements input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.formElements button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.formElements button:hover {
+    background-color: #0056b3;
+}

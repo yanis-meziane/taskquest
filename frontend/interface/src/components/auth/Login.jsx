@@ -23,7 +23,7 @@ export default function  Login(){
                 </article>
 
                 <article className="loginElements">
-                    <input type="submit" value="Soumettre" />
+                    <input type="submit" value="Soumettre" id="loginButton" />
                 </article>
             </form> 
         </section>

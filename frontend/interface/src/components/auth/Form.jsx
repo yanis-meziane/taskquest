@@ -12,7 +12,7 @@ export default function Form() {
     
     <section id="FormMain">
         <div id="formSection">
-        <h1>Sign in </h1>
+        <h1 id="signin">Sign in </h1>
         <form onSubmit={form} className="formulaire">
 
             <article className="formElements">
@@ -43,9 +43,11 @@ export default function Form() {
             <article className="formElements">
                 <button type="submit">Soumettre</button>
             </article>
-        </form>
 
-        Si tu n'as pas encore de compte, clique <Link to={"/login"}>ici</Link>
+            <article className="formElements">
+                 Si tu as déjà un compte, clique <Link to={"/login"}>ici</Link>
+            </article>
+        </form>
     </div>
     </section>
 
