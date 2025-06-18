@@ -6,8 +6,8 @@ class User {
     const hashedPassword = await bcrypt.hash(password, 12);
     
     const query = `
-      INSERT INTO users (email, password, name, created_at)
-      VALUES ($1, $2, $3, NOW())
+      INSERT INTO users (email, password, firstname, created_at)
+      VALUES (?, ?, ?, NOW())
       RETURNING id, email, name, created_at
     `;
     
