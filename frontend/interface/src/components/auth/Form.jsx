@@ -1,6 +1,7 @@
 //Faire des modifications avec les API afin de retourner l'information de si l'utilisateur existe déjà ou non
 
 import "../CSS/authCSS/form.css"
+import { Link } from "react-router-dom";
 
 export default function Form() {
   function form(event) {
@@ -10,7 +11,7 @@ export default function Form() {
   return (
 
     <section id="FormMain">
-        <h1>Login</h1>
+        <h1>Sign in </h1>
         <form onSubmit={form} className="formulaire">
 
             <article className="formElements">
@@ -39,9 +40,11 @@ export default function Form() {
             </article>
 
             <article className="formElements">
-                <button type="submit">Search</button>
+                <button type="submit">Soumettre</button>
             </article>
         </form>
+
+        Si tu n'as pas encore de compte, clique <Link to={"/login"}>ici</Link>
     </section>
 
   );

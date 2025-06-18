@@ -1,6 +1,9 @@
 #FormMain{
     align-items: center;
     text-align: center;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    
 }
 
 .formulaire{

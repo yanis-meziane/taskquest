@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/common/Header"
 import Accueil from "./components/common/Accueil"
 import Form from "./components/auth/Form";
+import Login from "./components/auth/Login"
 
 //Faut rajouter et créer la page settings, mes associations et contacts
 
@@ -14,6 +15,7 @@ import Form from "./components/auth/Form";
         <Routes>
           <Route path='/' element={<Accueil />} />
           <Route path="/form" element={<Form />} />
+          <Route path = "/login" element = {<Login />} />
         </Routes>
       </BrowserRouter>
     );
