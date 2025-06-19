@@ -1,5 +1,6 @@
+// frontend/interface/src/components/auth/Form.jsx
 import { useState } from "react";
-import "../CSS/authCSS/form.css"
+import "../CSS/authCSS/form.css";
 import { Link } from "react-router-dom";
 
 export default function Form() {
@@ -7,7 +8,7 @@ export default function Form() {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
-    mail: '',
+    email: '', // CORRECTION: utiliser 'email' au lieu de 'mail'
     password: '',
     confPassword: ''
   });
@@ -34,12 +35,18 @@ export default function Form() {
       return;
     }
 
+    // Validation de base
+    if (formData.password.length < 6) {
+      setMessage('Le mot de passe doit contenir au moins 6 caractères');
+      return;
+    }
+
     setIsLoading(true);
     setMessage('');
 
     try {
       // Envoyer les données au backend
-      const response = await fetch('http://localhost:3000/api/auth/signup', {
+      const response = await fetch('http://localhost:3000/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +54,7 @@ export default function Form() {
         body: JSON.stringify({
           firstname: formData.firstname,
           lastname: formData.lastname,
-          mail: formData.mail,
+          email: formData.email, // CORRECTION: utiliser 'email'
           password: formData.password
         })
       });
@@ -60,10 +67,16 @@ export default function Form() {
         setFormData({
           firstname: '',
           lastname: '',
-          mail: '',
+          email: '',
           password: '',
           confPassword: ''
         });
+        
+        // Redirection après succès
+        setTimeout(() => {
+          window.location.href = '/login';
+        }, 2000);
+        
       } else {
         setMessage(result.message || 'Erreur lors de l\'inscription');
       }
@@ -79,7 +92,7 @@ export default function Form() {
   return (
     <section id="FormMain">
       <div id="formSection">
-        <h1 id="signin">Sign in</h1>
+        <h1 id="signin">Sign up</h1>
         
         {/* Affichage des messages */}
         {message && (
@@ -118,13 +131,13 @@ export default function Form() {
           </article>
 
           <article className="formElements">
-            <label htmlFor="mail">Quel est ton mail ?</label>
+            <label htmlFor="email">Quel est ton email ?</label>
             <input 
               type="email" 
-              name="mail" 
-              id="mail" 
-              placeholder="Mail..."
-              value={formData.mail}
+              name="email" 
+              id="email" 
+              placeholder="Email..."
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -136,6 +149,7 @@ export default function Form() {
               type="password" 
               name="password" 
               id="password" 
+              placeholder="Au moins 6 caractères..."
               minLength={6}
               value={formData.password}
               onChange={handleChange}
@@ -149,6 +163,7 @@ export default function Form() {
               type="password" 
               name="confPassword" 
               id="confPassword" 
+              placeholder="Confirme ton mot de passe..."
               minLength={6}
               value={formData.confPassword}
               onChange={handleChange}
@@ -158,7 +173,7 @@ export default function Form() {
 
           <article className="formElements">
             <button type="submit" disabled={isLoading}>
-              {isLoading ? 'Inscription...' : 'Soumettre'}
+              {isLoading ? 'Inscription...' : 'S\'inscrire'}
             </button>
           </article>
 

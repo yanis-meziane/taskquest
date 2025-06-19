@@ -1,5 +1,6 @@
+// frontend/interface/src/components/auth/Login.jsx
 import { useState } from "react";
-import "../CSS/authCSS/login.css"
+import "../CSS/authCSS/login.css";
 
 export default function Login() {
   // État pour gérer les données du formulaire
@@ -22,14 +23,14 @@ export default function Login() {
 
   // Fonction de soumission du formulaire
   async function handleSubmit(event) {
-    event.preventDefault(); // Correction de la faute de frappe
+    event.preventDefault();
     
     setIsLoading(true);
     setMessage('');
 
     try {
-      // Envoyer les données au backend
-      const response = await fetch('http://localhost:3000/backend/src/middleware/auth.js', {
+      // CORRECTION: Utiliser la bonne URL sans /api
+      const response = await fetch('http://localhost:3000/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,11 +46,14 @@ export default function Login() {
       if (result.success) {
         setMessage('Connexion réussie !');
         
-        // Stocker les informations utilisateur (optionnel)
-        sessionStorage.setItem('user', JSON.stringify(result.user));
+        // Stocker les informations utilisateur et le token
+        localStorage.setItem('token', result.token);
+        localStorage.setItem('user', JSON.stringify(result.user));
         
-        // Rediriger vers la page principale (à adapter selon votre app)
-        // window.location.href = '/dashboard';
+        // Rediriger vers la page principale après un court délai
+        setTimeout(() => {
+          window.location.href = '/dashboard'; // Adaptez selon votre routing
+        }, 1000);
         
       } else {
         setMessage(result.message || 'Erreur lors de la connexion');
@@ -104,7 +108,7 @@ export default function Login() {
 
           <article className="loginElements">
             <button type="submit" id="loginButton" disabled={isLoading}>
-              {isLoading ? 'Connexion...' : 'Soumettre'}
+              {isLoading ? 'Connexion...' : 'Se connecter'}
             </button>
           </article>
         </form> 
