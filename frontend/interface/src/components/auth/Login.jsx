@@ -30,7 +30,7 @@ export default function Login() {
 
     try {
       // CORRECTION: Utiliser la bonne URL sans /api
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('http://localhost:3001/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,10 +50,11 @@ export default function Login() {
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.user));
         
+        /*
         // Rediriger vers la page principale après un court délai
         setTimeout(() => {
           window.location.href = '/dashboard'; // Adaptez selon votre routing
-        }, 1000);
+        }, 1000); */
         
       } else {
         setMessage(result.message || 'Erreur lors de la connexion');
