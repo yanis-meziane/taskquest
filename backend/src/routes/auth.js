@@ -6,10 +6,10 @@ const router = express.Router();
 // Route pour l'inscription (Sign up)
 router.post('/signup', async (req, res) => {
   try {
-    const { firstname, lastname, mail, password } = req.body;
+    const { firstname, lastname, email, password } = req.body;
     
     // Validation des données
-    if (!firstname || !lastname || !mail || !password) {
+    if (!firstname || !lastname || !email || !password) {
       return res.status(400).json({ 
         success: false, 
         message: 'Tous les champs sont requis' 
@@ -17,7 +17,7 @@ router.post('/signup', async (req, res) => {
     }
 
     // Vérifier si l'utilisateur existe déjà
-    const existingUser = await User.findByEmail(mail);
+    const existingUser = await User.findByEmail(email);
     if (existingUser) {
       return res.status(400).json({ 
         success: false, 
@@ -30,7 +30,7 @@ router.post('/signup', async (req, res) => {
 
     // Créer l'utilisateur
     const newUser = await User.create({
-      email: mail,
+      email: email,
       password: password,
       name: fullName
     });

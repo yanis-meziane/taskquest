@@ -29,7 +29,7 @@ export default function Login() {
 
     try {
       // Envoyer les données au backend
-      const response = await fetch('http://localhost:3000/api/auth/login', {
+      const response = await fetch('http://localhost:3000/backend/src/middleware/auth.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
