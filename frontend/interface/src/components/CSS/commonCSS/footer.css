@@ -1,0 +1,7 @@
+/* Le footer restera en bas */
+.footerMain {
+   display: flex;
+    height: 10vh;
+    flex-direction: column;
+    box-shadow: 5px 0.5px 10px rgba(0,0,0,1);
+}
