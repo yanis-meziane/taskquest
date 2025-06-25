@@ -29,7 +29,7 @@ export default function Login() {
     setMessage('');
 
     try {
-      // CORRECTION: Utiliser la bonne URL sans /api
+      // CORRECTION: Utiliser le bon port 3001
       const response = await fetch('http://localhost:3001/auth/login', {
         method: 'POST',
         headers: {
@@ -42,6 +42,8 @@ export default function Login() {
       });
 
       const result = await response.json();
+      
+      console.log('Réponse du serveur:', result); // Pour debug
 
       if (result.success) {
         setMessage('Connexion réussie !');
@@ -50,11 +52,10 @@ export default function Login() {
         localStorage.setItem('token', result.token);
         localStorage.setItem('user', JSON.stringify(result.user));
         
-        /*
         // Rediriger vers la page principale après un court délai
         setTimeout(() => {
           window.location.href = '/dashboard'; // Adaptez selon votre routing
-        }, 1000); */
+        }, 1000);
         
       } else {
         setMessage(result.message || 'Erreur lors de la connexion');
@@ -62,7 +63,7 @@ export default function Login() {
 
     } catch (error) {
       console.error('Erreur:', error);
-      setMessage('Erreur de connexion au serveur');
+      setMessage('Erreur de connexion au serveur. Vérifiez que le serveur backend est démarré.');
     } finally {
       setIsLoading(false);
     }

@@ -8,7 +8,7 @@ export default function Form() {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
-    email: '', // CORRECTION: utiliser 'email' au lieu de 'mail'
+    email: '',
     password: '',
     confPassword: ''
   });
@@ -45,8 +45,8 @@ export default function Form() {
     setMessage('');
 
     try {
-      // Envoyer les données au backend
-      const response = await fetch('http://localhost:3000/auth/signup', {
+      // CORRECTION: Utiliser le bon port 3001
+      const response = await fetch('http://localhost:3001/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,12 +54,14 @@ export default function Form() {
         body: JSON.stringify({
           firstname: formData.firstname,
           lastname: formData.lastname,
-          email: formData.email, // CORRECTION: utiliser 'email'
+          email: formData.email,
           password: formData.password
         })
       });
 
       const result = await response.json();
+      
+      console.log('Réponse du serveur:', result); // Pour debug
 
       if (result.success) {
         setMessage('Inscription réussie ! Vous pouvez maintenant vous connecter.');
@@ -83,7 +85,7 @@ export default function Form() {
 
     } catch (error) {
       console.error('Erreur:', error);
-      setMessage('Erreur de connexion au serveur');
+      setMessage('Erreur de connexion au serveur. Vérifiez que le serveur backend est démarré.');
     } finally {
       setIsLoading(false);
     }

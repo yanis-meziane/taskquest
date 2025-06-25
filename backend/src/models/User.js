@@ -1,4 +1,4 @@
-
+// backend/src/models/User.js
 const pool = require('../config/database');
 const bcrypt = require('bcryptjs');
 
@@ -61,6 +61,11 @@ class User {
       console.error('Erreur lors de la récupération des associations:', error);
       throw error;
     }
+  }
+
+  // Méthode pour obtenir le nom complet (pour compatibilité)
+  static formatUserName(user) {
+    return `${user.firstname} ${user.lastname}`;
   }
 }
 

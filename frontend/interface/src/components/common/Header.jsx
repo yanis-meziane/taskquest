@@ -12,7 +12,7 @@ const Navbar = () => {
     const menuItems = [
         { name : "Login", href : "/form", icon : LogIn},
         { name : "Accueil", href :"/", icon : Home},
-        { name : "Settings", href : "#settings", icon : Settings},
+        { name : "Settings", href : "/settings", icon : Settings},
         { name : " Mes Associations", href : "#mesAsso", icon : User},
         { name : "Contact", href : "#contact", icon : Mail}
     ];

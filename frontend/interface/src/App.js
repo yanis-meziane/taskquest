@@ -5,6 +5,8 @@ import NavBar from "./components/common/Header"
 import Accueil from "./components/common/Accueil"
 import Form from "./components/auth/Form";
 import Login from "./components/auth/Login"
+import Settings from "./components/common/Settings"
+import Footer from "./components/common/footer"
 
 //Faut rajouter et créer la page settings, mes associations et contacts
 
@@ -16,7 +18,9 @@ import Login from "./components/auth/Login"
           <Route path='/' element={<Accueil />} />
           <Route path="/form" element={<Form />} />
           <Route path = "/login" element = {<Login />} />
+          <Route path = "/settings" element = {<Settings />} />
         </Routes>
+      <Footer />
       </BrowserRouter>
     );
   }
